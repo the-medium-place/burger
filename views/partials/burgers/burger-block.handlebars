@@ -1,0 +1,18 @@
+{{!-- <li>
+	{{name}}
+
+	<button class="devour" data-id="{{id}}" data-devourstate="{{devour}}">
+		{{#if devour}}Eat ME!{{else}}WAKE UP!{{/if}}
+	</button>
+</li> --}}
+
+<li>
+	{{name}}
+
+	{{#if devour}}
+	<button class="devour" data-id="{{id}}" data-devourstate="{{devour}}">
+		DEVOUR IT!
+	</button>
+	{{/if}}
+
+</li>
