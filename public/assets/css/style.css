@@ -3,18 +3,33 @@ li {
     margin: 5px;
     background: #faebd7;
   }
+
+  .container {
+
+    display: flex; 
+    justify-content: space-between;
+  }
   
   .label {
     font-weight: bold;
   }
   
-  .create-update-form {
+  .input-form {
     padding: 5px;
     margin: 5px;
     background: aqua;
+    text-align: center;
   }
   
   .form-group {
     margin-bottom: 5px;
   }
+
+  .burger-box {
+   
+    width: 40%; 
+    margin: 0 auto;
+
+  }
+
   

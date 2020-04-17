@@ -1,11 +1,12 @@
 const connection = require("../config/connection");
 
 // create array of question marks of 'num' length for use in sql query
-function printQuestionMarks(num) {
+function printQuestionMarks(arr) {
     var queArr = [];
-    for (i in num){
+    for (i in arr){
         queArr.push("?");
     }
+    return queArr.toString();
 }
 
 // change obj to sql syntax
@@ -31,19 +32,23 @@ function objToSql(obj) {
 
 
 
-orm = {
+const orm = {
 
     all: (tableInput, callback) => {
         const queryString = `SELECT * FROM ${tableInput};`;
+        console.log(queryString);
         connection.query(queryString, (err, res) => {
             if (err) throw err;
             callback(res);
         });
     },
 
-    create: (table, cols, vals, callback) => {
-        const queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES (${printQuestionMarks(vals.length)})`;
-
+    create: (table, columns, vals, callback) => {
+     
+        const numQues = printQuestionMarks(vals);
+        const colStr = columns.toString();
+        const queryString = `INSERT INTO ${table} (${colStr}) VALUES (${numQues})`;
+        console.log(queryString);
         connection.query(queryString, vals, (err, res) => {
             if (err) throw err;
 

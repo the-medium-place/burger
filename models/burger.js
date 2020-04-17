@@ -8,13 +8,12 @@ const burger = {
         });
     },
 
-    create: (cols, vals, callback) => {
+    create: (table, cols, vals, callback) => {
         orm.create("burgers", cols, vals, (res) => {
             callback(res);
         });
     },
     update: (objColVals, condition, callback) => {
-        console.table(condition)
         orm.update("burgers", objColVals, condition, (res) => {
             callback(res);
         });
