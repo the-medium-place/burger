@@ -1,33 +1,12 @@
-<h1>Whadd-a-Burger!</h1>
-
-<div class="container">
-  <div class="burger-box">
-    <h2>BURGERS I WANT TO EAT</h2>
-    <img src="">
-
-    <ul>
-      {{#each burgers}}
-      {{#unless devoured}}
-      {{ burger_name }}
-      {{> burgers/burger-block devour=true}}
-      {{/unless}}
-      {{/each}}
-    </ul>
-  </div>
-
-  <div class="burger-box">
-    <h2>BURGERS I HAVE EATEN</h2>
-
-    <ul>
-      {{#each burgers}}
-      {{#if devoured}}
-      {{ burger_name }}
-      {{> burgers/burger-block devour=false}}
-      {{/if}}
-      {{/each}}
-    </ul>
-  </div>
+<div class="head-image">
+<img src="/assets/images/burgerpng.png" style="height: 30vh;">
 </div>
+<div class="head-text">
+<h1>-- Burger Listing --</h1>
+</div>
+
+
+<div class="form-container">
 <div class="input-form">
   <h2>Add a burger</h2>
   <form class="create-form">
@@ -40,4 +19,38 @@
 
     <button type="submit" id="add-burger">Add Burger</button>
   </form>
+</div>
+</div>
+
+<div class="container">
+  <div class="burger-box">
+
+   
+   <div class="menu-logo">
+       <h2>Burgers I Will One Day Eat: </h2>
+      
+    </div>
+    <ul>
+      {{#each burgers}}
+      {{#unless devoured}}
+      {{> burgers/burger-block devour=true}}
+      {{/unless}}
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="burger-box" id="menu">
+    <div class="menu-logo">
+      <h2>Burger Conquests: </h2>
+      
+    </div>
+
+    <ul>
+      {{#each burgers}}
+      {{#if devoured}}
+      {{> burgers/burger-block devour=false}}
+      {{/if}}
+      {{/each}}
+    </ul>
+  </div>
 </div>

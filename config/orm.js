@@ -57,7 +57,6 @@ const orm = {
     },
 
     update: (table, objColVals, condition, callback) => {
-        // const queryString = `UPDATE ${table} SET ${objToSql(objColVals)} WHERE ${condition}`
         console.log("orm conditions: " + condition)
         var queryString = "UPDATE " + table;
 
